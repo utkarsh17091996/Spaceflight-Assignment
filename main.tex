@@ -1,0 +1,334 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  My documentation report
+%  Objective: Explain what I did and how, so someone can continue with the investigation
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.65]{Rocket}}} % Image background
+\centering
+\vspace*{8cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\textbf{LISA Pathfinder}\\
+{\LARGE European Space Agency}\par % Book title
+\vspace*{1cm}
+{\Huge Utkarsh Chauhan}\par % Author name
+\endgroup
+\let\cleardoublepage\clearpage
+\chapterimage{new1.png} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{LISA_Pathfinder_in_low-Earth_orbit_C.png} % Chapter heading image
+
+\chapter{Overview}
+
+\section{Mission}\index{Motivation}
+LISA Pathfinder is testing in flight the concept of low-frequency gravitational wave detection: it placed two test masses in a near-perfect gravitational free-fall, and is controlling and measuring their motion with unprecedented accuracy. To do this, it makes use of inertial sensors, a laser metrology system, a drag-free control system and an ultra-precise micro-propulsion system.
+
+\section{Objective}\index{Objective}
+The aim of the LISA Pathfinder mission is to demonstrate, in a space environment, that free-falling bodies follow geodesics – the equivalent of straight lines in a curved space – in spacetime, by more than two orders of magnitude better than any past, present or planned mission. Specifically, it must:
+\begin{itemize}
+\item Demonstrate drag-free and attitude control in a spacecraft with two free proof masses.
+\item Test feasibility of laser interferometry with picometre resolution at low frequency, approaching 10-12 mHz-1/2 in the frequency band 1–30 mHz.
+\item Test the endurance of the different instruments and hardware in the space environment.
+\end{itemize}
+
+
+\section{References}\index{Reference}
+For more Information about LISA Pathfinder Visit:
+		\begin{description}
+        	\item[]\url{http://blogs.esa.int/}
+            \item[]\url{http://spaceflight101.com/lisa-pathfinder/}
+            \item[]\url{https://lisapathfinder.org/}
+            \item[]\url{https://en.wikipedia.org/wiki/LISA_Pathfinder}
+            \item[]\url{http://sci.esa.int/lisa-pathfinder/}
+        \end{description}
+
+\chapterimage{LaunchVehicle.png}
+
+\chapter{Launch Vehicle and Ascent Mission}
+
+\section{Vega Launch Vehicle}\index{First ideas}
+Vega is a three-stage all-solid launch vehicle with an optional liquid fueled upper stage for re-start and precise injection capability. The launch vehicle stands 29.9 meters tall, has a main diameter of 3.03 meters and a liftoff mass of 137,000 Kilograms. The Rocket can lift up to 2,500 Kilograms of Payloads – depending on the target orbit.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{5939181_orig-512x266.png}
+    \caption{Disintegrated view of Vega - European Space Agency}
+    \label{fig:awesome_image}
+\end{figure}
+
+\subsection{First Stage}
+The P80FW first Stage of the Vega Vehicle burns for 106.8 seconds giving it an altitude of 50 Kilometers and a velocity of 1765 m/s . After which Stage 1 separates and Stage 2 ignites. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Stage1.png}
+    \caption{Vega First Stage Configuration and Data}
+    \label{fig:super}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=0.56\textwidth]{Stage_1_Plot.jpg}
+    \includegraphics[width=0.44\textwidth]{Stage1_Cal.png}
+    \caption{Stage 1 Trajectory Analysis}
+    \label{fig:super}
+\end{figure}
+
+\newpage
+
+\subsection{Second Stage}
+
+The second stage ZEFIRO 23 Solid Rocket Motor burns for about 71.7 seconds giving the rocket a speed of 3847 m/s and reaching an altitude of 70.26 Kilometers after which it separates and 3rd stage ignites.  
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Stage2.png}
+    \caption{Vega Second Stage Configuration and Data}
+    \label{fig:super}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=0.56\textwidth]{Stage_2_Plot.jpg}
+    \includegraphics[width=0.44\textwidth]{Stage2_Cal.png}
+    \caption{Stage 2 Trajectory Analysis}
+    \label{fig:super}
+\end{figure}
+\clearpage
+\subsection{Third Stage}
+
+The ZEFIRO 9 solid motor burns for about 109.8 seconds giving vehicle an altitude of 193  Kilometers. During the Third Stage Payload Fairing separates at an altitude of 80.52 Kilometers.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{Stage3.png}
+    \caption{Vega Third Stage Configuration and Data}
+    \label{fig:super}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[width=0.567\textwidth]{Stage_3_Plot.jpg}
+    \includegraphics[width=0.433\textwidth]{Stage3_Cal.png}
+    \caption{Stage 3 Trajectory Analysis}
+    \label{fig:super}
+\end{figure}
+\clearpage
+\subsection{Fourth/AVUM Stage}
+
+The first burn of the Attitude and Vernier Upper Module (AVUM) multifunctional stage of the Vega Launch Vehicle burns for 593.35 seconds giving it an altitude of 428 Kilometers and velocity of 7302 m/s. 
+	
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.82\textwidth]{Stage4.png}
+    \caption{Vega Fourth/AVUM Stage Configuration and Data}
+    \label{fig:pca}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.82\textwidth]{Stage_4_Plot.jpg}
+    \caption{Vega Fourth/AVUM Stage Configuration and Data}
+    \label{fig:pca}
+\end{figure}
+\clearpage
+\subsection{AVUM Second Burn and Final Separation}
+After the first AVUM burn the vehicle coast for 85 minutes in an elliptical orbit. Again a second burn of 4th stage starts and and burns for 92 seconds giving the 1,906-kilogram LISA Pathfinder spacecraft a final orbit with apogee at 1,540 kilometers, and perigee at 207 kilometers, and an inclination of 5.96 degrees.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.82\textwidth]{Separation.jpg}
+    \caption{LISA deploys from AVUM Fourth Stage of Rocket}
+    \label{fig:pca}
+\end{figure}
+\clearpage
+
+\chapterimage{Orbital.jpg}
+\chapter{Orbital Manoeuvres}
+\section{ARMs (Apogee Raising Manoeuvres)}\index{Related topics}
+To travel to Sun-Earth L1 Point, LISA Pathfinder must raise its apogee to be near the 1.5-million-km point and to do so the spacecraft will perform a sequence of 'Apogee Raising Manoeuvres (ARMs) providing a velocity increment of more than 3000 m/sec  
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=1.0\textwidth]{APMs.png}
+    \caption{All 6 ARMs of LISA}
+\end{figure}
+
+Before the Manoeuvres LPF was in an elliptical orbit with Perigee = 207 Km and Apogee = 1540 Km with an inclination of but 6.5 Degrees and total mass of 1910 Kg (including both fuel and instrumentation).
+\clearpage
+
+\subsection{ARM 1}\index{Related topics}
+
+At the end of First Apogee Raising Manoeuvre:
+\begin{description}
+\item[New Perigee :] 207 Km
+\item[New Apogee :] 1567 Km
+\item[Delta Velocity :] 6.28 M/s
+\item[Pre Burn Mass :] 1910 Kg
+\item[Post Burn Mass :] 1905.63 Kg
+\item[Required Mass :] 4.37 Kg
+\end{description}
+
+\begin{figure}[h]
+    \includegraphics[width=0.8\textwidth]{ARM1.png}
+\end{figure}
+
+\subsection{ARM 2}\index{Related topics}
+
+At the end of Second Apogee Raising Manoeuvre:
+\begin{description}
+\item[New Perigee :] 288 Km
+\item[New Apogee :] 3392 Km
+\item[Delta Velocity :] 295.23 M/s
+\item[Pre Burn Mass :] 1905 Kg
+\item[Post Burn Mass :] 1711.44 Kg
+\item[Required Mass :] 194.19 Kg
+\end{description}
+
+\begin{figure}[h]
+    \includegraphics[width=0.8\textwidth]{ARM2.png}
+\end{figure}
+\clearpage
+\subsection{ARM 3}\index{Related topics}
+
+At the end of Third Apogee Raising Manoeuvre:
+\begin{description}
+\item[New Perigee :] 440 Km
+\item[New Apogee :] 7091 Km
+\item[Delta Velocity :] 379.36 M/s
+\item[Pre Burn Mass :] 1711.44 Kg
+\item[Post Burn Mass :] 1490.67 Kg
+\item[Required Mass :] 220.77 Kg
+\end{description}
+
+\begin{figure}[h]
+    \includegraphics[width=0.8\textwidth]{ARM3.png}
+\end{figure}
+
+\subsection{ARM 4}\index{Related topics}
+
+At the end of Fourth Apogee Raising Manoeuvre:
+\begin{description}
+\item[New Perigee :] 557 Km
+\item[New Apogee :] 14137 Km
+\item[Delta Velocity :] 458.06 M/s
+\item[Pre Burn Mass :] 1490.67 Kg
+\item[Post Burn Mass :] 1261.70 Kg
+\item[Required Mass :] 228.97 Kg
+\end{description}
+
+\begin{figure}[h]
+    \includegraphics[width=0.8\textwidth]{ARM4.png}
+\end{figure}
+\clearpage
+
+\subsection{ARM 5}\index{Related topics}
+
+At the end of Fifth Apogee Raising Manoeuvre:
+\begin{description}
+\item[New Perigee :] 733 Km
+\item[New Apogee :] 43641 Km
+\item[Delta Velocity :] 638.43 M/s
+\item[Pre Burn Mass :] 1261.70 Kg
+\item[Post Burn Mass :] 1000.00 Kg
+\item[Required Mass :] 261.70 Kg
+\end{description}
+
+\begin{figure}[h]
+    \includegraphics[width=0.8\textwidth]{ARM5.png}
+\end{figure}
+
+\subsection{ARM 6}\index{Related topics}
+
+At the end of Sixth Apogee Raising Manoeuvre:
+\begin{description}
+\item[New Perigee :] 748 Km
+\item[New Apogee :] 124805 Km
+\item[Delta Velocity :] 393.62 M/s
+\item[Pre Burn Mass :] 1000.00 Kg
+\item[Post Burn Mass :] 866.52 Kg
+\item[Required Mass :] 133.48 Kg
+\end{description}
+
+\begin{figure}[h]
+    \includegraphics[width=0.8\textwidth]{ARM6.png}
+\end{figure}
+\clearpage
+\chapterimage{FinalOrbit.png}
+\chapter{Final Orbit}
+\section{Operational Orbit}\index{Related topics}
+The location of L1 is the solution to the following equation, balancing gravitation and the centrifugal force:
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.35\textwidth]{Formula1.png}
+\end{figure}
+
+where r is the distance of the L1 point from the smaller object, R is the distance between the two main objects, and M1 and M2 are the masses of the large and small object, respectively. (The quantity in parentheses on the right is the distance of L1 from the center of mass.) Solving this for r involves solving a quintic function, but if the mass of the smaller object (M2) is much smaller than the mass of the larger object (M1) then L1 and L2 are at approximately equal distances r from the smaller object, equal to the radius of the Hill sphere, given by:
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.12\textwidth]{Formula2.png}
+\end{figure}
+This distance can be described as being such that the orbital period, corresponding to a circular orbit with this distance as radius around M2 in the absence of M1, is that of M2 around M1, divided by sqrt{3}= 1.73:
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.23\textwidth]{Formula3.png}
+\end{figure}
+\clearpage
+
+The operational orbit for LISA Pathfinder is a 500000 km x 800000 km Lissajous orbit around L1. This orbit has been chosen because it is an intrinsically 'quiet' place in space, far away from massive bodies, which induce tidal forces on the spacecraft; has constant illumination from the Sun; and has a quasi-constant distance from Earth for communication. This orbit fulfills the stringent requirements of LISA Pathfinder concerning thermal and gravitational stability.
+This Lissajous orbit, with period of 180 days, is unstable and periodic station-keeping manoeuvres will be required - amounting to about 1.8 ms-1 per year - which will be performed using the cold gas thrusters of the spacecraft's micro-propulsion system.
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=1.0\textwidth]{L1_Orbit.png}
+    \caption{Potato Chip type Orbit around Sun-Earth L1 point}
+\end{figure}
+\linebreak
+For video Animation of LPF Orbit Visit:
+\begin{description}    	  	  \item[]\url{http://www.esa.int/spaceinvideos/Videos/2015/10/LISA_Pathfinder_s_journey_to_L1}
+\end{description}
+\end{document}
